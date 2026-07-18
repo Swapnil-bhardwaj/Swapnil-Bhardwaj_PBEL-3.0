@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local user data (mood/quiz logs) - don't commit personal journal data
+data/*.csv
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
+*.swp
