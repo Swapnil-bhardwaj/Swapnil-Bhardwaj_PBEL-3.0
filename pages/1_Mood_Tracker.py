@@ -125,7 +125,8 @@ else:
             ax.set_title("Emotional Trend Over Logged Days", fontsize=12, fontweight="bold", color="#1E293B")
             ax.grid(True, linestyle=":", alpha=0.6, color="#CBD5E1")
             ax.set_xticks(range(len(df)))
-            ax.set_xticklabels([ts.split()[0] if " " in str(ts) else str(ts) for ts in df["timestamp"]], rotation=25, ha="right", fontsize=8)
+            x_labels = [str(ts).split()[0] if " " in str(ts) else str(ts)[:10] for ts in df["timestamp"]]
+            ax.set_xticklabels(x_labels, rotation=25, ha="right", fontsize=8)
             ax.spines['top'].set_visible(False)
             ax.spines['right'].set_visible(False)
             ax.spines['left'].set_color('#CBD5E1')
