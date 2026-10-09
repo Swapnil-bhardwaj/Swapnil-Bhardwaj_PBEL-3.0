@@ -1,63 +1,67 @@
 """
 quiz_data.py
 ------------
-A short, original 10-question stress/wellbeing self-assessment.
+Student-tailored 10-question Academic Stress & Burnout Self-Assessment.
 
-IMPORTANT: This is inspired by the general *style* of standardized
-wellbeing scales (Likert-scored, 0-3 per item) but the questions themselves
-are original and this is explicitly a self-awareness tool, NOT a validated
-clinical instrument (like the PHQ-9 or GAD-7) and must not be presented as
-one. Always encourage professional consultation for real diagnosis.
+Designed around common student stressors: exams, late-night cramming,
+group projects, screen fatigue, and imposter syndrome.
+
+Scored on a 0-3 Likert scale (Total: 30).
+Explicitly a self-awareness aid, NOT a clinical diagnosis.
 """
 
 from __future__ import annotations
 
 QUESTIONS = [
-    "I have felt overwhelmed by my daily responsibilities.",
-    "I have had trouble relaxing.",
-    "I have felt irritable or easily annoyed.",
-    "I have had difficulty falling or staying asleep.",
-    "I have felt physically tense (tight shoulders, headaches, etc.).",
-    "I have found it hard to concentrate on tasks.",
-    "I have felt anxious or on edge without a clear reason.",
-    "I have withdrawn from friends or activities I usually enjoy.",
-    "I have felt low on energy or motivation.",
-    "I have felt like things are piling up and I can't keep up.",
+    "Feeling overwhelmed by upcoming assignments, exams, or project submissions.",
+    "Trouble turning off racing thoughts when trying to sleep before early morning classes.",
+    "Getting easily annoyed or impatient with group project members, roommates, or peers.",
+    "Struggling to concentrate on lecture notes or textbooks without feeling mentally exhausted.",
+    "Physical tension: tight shoulders from laptop hunching, headaches, or skipping meals.",
+    "Feeling guilty or anxious whenever you take a break instead of studying.",
+    "Excessive dread or anxiety regarding GPA, upcoming tests, or career placements.",
+    "Isolating yourself from friends, campus events, or hobbies you usually enjoy.",
+    "Relying heavily on excessive caffeine or energy drinks just to stay functional.",
+    "Feeling like all your peers have everything figured out while you are falling behind (imposter syndrome).",
 ]
 
 OPTIONS = [
-    ("Not at all", 0),
-    ("Several days", 1),
-    ("More than half the days", 2),
-    ("Nearly every day", 3),
+    ("Rarely / Not at all", 0),
+    ("Several days a week", 1),
+    ("More than half the week", 2),
+    ("Almost every single day", 3),
 ]
 
 MAX_SCORE = len(QUESTIONS) * 3  # 30
 
 
-def score_to_severity(score: int) -> tuple[str, str]:
-    """Return (severity_label, advice_text) for a given total score."""
-    if score <= 7:
+def score_to_severity(score: int) -> tuple[str, str, str]:
+    """Return (severity_label, advice_text, badge_color) for a given total score."""
+    if score <= 8:
         return (
-            "Low stress",
-            "You seem to be managing well right now. Keep up whatever routines are working for you — "
-            "regular sleep, movement, and downtime all help maintain this.",
+            "Low Academic Stress 🌿",
+            "You are navigating this semester with great resilience and balance! "
+            "Keep protecting your sleep schedule, eating regular meals, and giving yourself downtime without guilt.",
+            "#10B981",
         )
-    if score <= 15:
+    if score <= 16:
         return (
-            "Mild stress",
-            "You're carrying some stress, which is very normal. Try the breathing exercise or one of the "
-            "anti-stress games in this app, and consider building in short breaks through your day.",
+            "Moderate College Hustle ⚡",
+            "You are feeling the typical student squeeze. Deadlines and coursework are starting to pile up. "
+            "Try scheduling focused 25-minute study blocks followed by 5-minute screen-free breaks. Don't sacrifice sleep for extra study time.",
+            "#F59E0B",
         )
-    if score <= 22:
+    if score <= 23:
         return (
-            "Moderate stress",
-            "Your stress levels look elevated. It may help to talk to someone you trust — a friend, family "
-            "member, or counselor — about what's been going on, alongside small daily coping habits.",
+            "Elevated Academic Burnout ⚠️",
+            "Your stress levels are significantly elevated. It is likely affecting your focus, mood, and sleep. "
+            "Step back: prioritize only your top 2 urgent tasks, speak to a friend or academic advisor, and schedule an evening completely off to reset your nervous system.",
+            "#F97316",
         )
     return (
-        "High stress",
-        "Your responses suggest you're under significant stress right now. Please consider speaking with a "
-        "mental health professional or counselor soon. If you ever feel unsafe or unable to cope, reach out "
-        "to a helpline immediately (see the Chatbot tab for numbers).",
+        "High Burnout / Overload Alert 🚨",
+        "Your responses show you are carrying an unsustainable amount of pressure right now. "
+        "Academic deadlines and GPA can always be managed, but your mental and physical health must come first. "
+        "Please speak with someone you trust today — a campus counselor, student advisor, or family member. Check the MindMate Buddy page for immediate, free confidential support.",
+        "#EF4444",
     )
