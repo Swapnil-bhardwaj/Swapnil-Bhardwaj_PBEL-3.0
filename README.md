@@ -12,7 +12,7 @@ A modern, student-centric web app built with Python + Streamlit to help students
 |---|---|
 | 📝 **Campus Mood Journal** | Vent about difficult lectures, submissions, or small wins with quick context tags (`#ExamCrunch`, `#AllNighter`, `#GroupProject`). Uses NLP sentiment reflection to visualize your emotional trajectory over the semester. |
 | 📊 **Semester Stress & Burnout Check** | A 10-question self-assessment tailored for student life (GPA anxiety, sleep issues, screen fatigue, imposter syndrome) with actionable campus survival advice. |
-| 💬 **MindMate Peer Buddy** | A supportive chat companion that understands academic dread, procrastination, and roommate drama, with integrated crisis safety helplines. |
+| 💬 **MindMate Peer Companion** | An intelligent, courteous conversational buddy that answers politely, adapts to emotional sentiment, remembers conversation context, explains study frameworks (Pomodoro, Feynman, Active Recall), and supports optional Gemini AI. |
 | 🎮 **Study Break Hub (8 Games)** | Quick 5-minute study-break activities: Guided Box Breathing, Procedural Lo-Fi Soundscape Mixer, Bubble Wrap Pop, Zen Sand Garden, Student Affirmation Cookie, Calming Water Ripple Pond, Doodle Whiteboard, and Memory Match. |
 | 🔒 **100% Local & Private** | All notes and assessment histories stay strictly on your local computer in CSV format. Zero external data tracking. |
 
